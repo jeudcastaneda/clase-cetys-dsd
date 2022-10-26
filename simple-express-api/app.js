@@ -14,7 +14,8 @@ app.post('/welcome', urlencodedParser, function (req, res) {
   res.send('Welcome, ' + req.body.name)
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(port, function(err) {
+  if (err) console.log(err);
+  console.log(`Listening at http://localhost:${port}`)
 })
 
